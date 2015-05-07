@@ -8,8 +8,9 @@ the intercepted method and the output-hook the return value.
 
 ### Simple Example
 ```JavaScript
-// Original method
+// Some object
 var math = {
+    // Original method
     add: function add(a, b) {
         return a + b;
     }
@@ -20,21 +21,27 @@ var math = {
 // revert it to its original state.
 var release = intercept(math, 'add',
     // The first function controls the input
-    function (args) { console.log('in', args); return [5, 5]; }, // Important to return an array!
+    function (args) {
+        console.log('in', args);
+        return [5, 5]; // Important to return an array!
+    },
     // The second function controls the output
-    function (value) { console.log('out', value); return 'Monkey'; } // Important to return the value!
+    function (value) {
+        console.log('out', value);
+        return 'Monkey'; // Important to return the value!
+    }
 );
 
 // Now we call the method
 math.add(1, 2);
-// in [1, 2]
-// out 10
-// 'Monkey'
+//=> in [1, 2]
+//=> out 10
+//=> 'Monkey'
 
 // If we release the method and call it again
 release();
 math.add(2, 3);
-// 5
+//=> 5
 ```
 
 ### Arguments
