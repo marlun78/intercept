@@ -1,6 +1,6 @@
-# Intercept.js
+# Intercept
 
-Simple meta-programming for methods
+Simple metaprogramming for methods.
 
 The intercept-function enables input and output hooks that will run before and
 after the intercepted method. In the input-hook lets you control the input to
@@ -21,12 +21,12 @@ var math = {
 // revert it to its original state.
 var release = intercept(math, 'add',
     // The first function controls the input
-    function (args) {
+    function input(args) {
         console.log('in', args);
         return [5, 5]; // Important to return an array!
     },
     // The second function controls the output
-    function (value) {
+    function output(value) {
         console.log('out', value);
         return 'Monkey'; // Important to return the value!
     }
