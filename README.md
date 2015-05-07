@@ -7,7 +7,7 @@ after the intercepted method. In the input-hook lets you control the input to
 the intercepted method and the output-hook the return value.
 
 ### Simple Example
-```
+```JavaScript
 // Original method
 var math = {
     add: function add(a, b) {
@@ -40,22 +40,21 @@ math.add(2, 3);
 ### Arguments
 
 ##### host
-{Object} - The object to which the method belongs
+`Object` - The object to which the method belongs
 
 ##### name
-{String} - The name of the method to intercept
+`String` - The name of the method to intercept
 
 ##### input (optional)
-{Function} - A function to be called _before_ the original implementation and
+`Function` - A function to be called _before_ the original implementation and
 lets you control the input to the method. If supplied, **it MUST return an
-array** (the args)!
+array** of arguments to the original implementation!
 
 ##### output (optional)
-{Function} - A function to be called _after_ the original implementation and it
+`Function` - A function to be called _after_ the original implementation and it
 lets you control the output of the method. If supplied, what ever it returns
 will be used as the return value of the method.
 
 ### Returns
-
-{Function} - A function to release the method and revert it to its original
+`Function` - A function to release the method and revert it to its original
 state.
