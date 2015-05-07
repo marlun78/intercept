@@ -1,0 +1,41 @@
+{
+  "name": "intercept",
+  "version": "1.0.0",
+  "description": "Simple meta-programming for methods",
+  "main": "./src",
+  "dependencies": {
+    "lodash.isarray": "^3.0.2",
+    "lodash.isfunction": "^3.0.3",
+    "lodash.noop": "^3.0.0",
+    "lodash.toarray": "^3.0.1"
+  },
+  "devDependencies": {
+    "jasmine": "^2.3.1"
+  },
+  "scripts": {
+    "test": "jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marlun78/intercept"
+  },
+  "author": "Martin Eneqvist <marlun78@hotmail.com> (https://github.com/marlun78)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/marlun78/intercept/issues"
+  },
+  "homepage": "https://github.com/marlun78/intercept",
+  "keywords": [
+    "ambush",
+    "catch",
+    "control",
+    "function",
+    "hijack",
+    "intercept",
+    "meta-programming",
+    "methods",
+    "prevent",
+    "tool",
+    "util"
+  ]
+}
